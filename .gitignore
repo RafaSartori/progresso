@@ -2,3 +2,7 @@
 *.dsk
 *.local
 *.~1~
+*.exe
+*.dcu
+__history\*.*
+*.~2~
