@@ -13,7 +13,7 @@ type TProgresso = class
       FGauge : TGauge;
       FLabel : TLabel;
    public
-      constructor Create;
+      constructor Create(FormWidth: Integer = 600; FormHeight: Integer = 60);
       destructor Free;
       procedure Inicializar(ValorMax, ValorMin : Integer; Mensagem: String;
                             CorBarra: TColor = clSkyBlue);
@@ -24,20 +24,20 @@ implementation
 
 { TProgresso }
 
-constructor TProgresso.Create;
+constructor TProgresso.Create(FormWidth: Integer = 600; FormHeight: Integer = 60);
 begin
   FForm  := TForm.Create(nil);
   FPanel := TPanel.Create(FForm);
-  FLabel := TLabel.Create(FForm);
-  FGauge := TGauge.Create(FForm);
+  FLabel := TLabel.Create(FPanel);
+  FGauge := TGauge.Create(FPanel);
 
   with FForm do
   begin
     Name := 'FForm';
     BorderStyle := bsNone;
     Caption := 'Progresso';
-    Height := 60;
-    Width := 600;
+    Height := FormHeight;
+    Width := FormWidth;
     FormStyle := fsStayOnTop;
     Position := poScreenCenter;
   end;
@@ -47,6 +47,7 @@ begin
     Name := 'FPanel';
     Parent := FForm;
     Align := alClient;
+    Caption := '';
   end;
 
   with FLabel do

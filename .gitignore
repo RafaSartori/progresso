@@ -4,6 +4,6 @@
 *.~1~
 *.exe
 *.dcu
-__history\*.*
+__history/*.*
 *.~2~
 *.~dsk

@@ -28,7 +28,7 @@ var
    mProgresso : TProgresso;
    i : Integer;
 begin
-   mProgresso := TProgresso.Create;
+   mProgresso := TProgresso.Create(400, 40);
    mProgresso.Inicializar(1000, 0, 'Processamento 1/3');
 
    for i := 0 to 1000 do
