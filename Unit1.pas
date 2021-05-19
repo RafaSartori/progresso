@@ -37,8 +37,8 @@ begin
       mProgresso.Incrementar(i);
    end;
 
-   mProgresso.Inicializar(1000, 0, 'Processamento 2/3', clBlue);
-   for i := 0 to 1000 do
+   mProgresso.Inicializar(100, 0, 'Processamento 2/3', clBlue);
+   for i := 0 to 100 do
    begin
       Sleep(1);
       mProgresso.Incrementar(i);
