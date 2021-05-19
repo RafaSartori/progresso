@@ -14,7 +14,7 @@ type TProgresso = class
       FLabel : TLabel;
    public
       constructor Create(FormWidth: Integer = 600; FormHeight: Integer = 60);
-      destructor Free;
+      destructor Destroy; override;
       procedure Inicializar(ValorMax, ValorMin : Integer; Mensagem: String;
                             CorBarra: TColor = clSkyBlue);
       procedure Incrementar(ValorProgresso : Integer);
@@ -72,9 +72,10 @@ begin
 
 end;
 
-destructor TProgresso.Free;
+destructor TProgresso.Destroy;
 begin
-   FreeAndNil(FForm);
+  FreeAndNil(FForm);
+  inherited;
 end;
 
 procedure TProgresso.Incrementar(ValorProgresso: Integer);
